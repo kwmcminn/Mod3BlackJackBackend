@@ -1,6 +1,11 @@
 class Api::V1::HandsController < ApplicationController
    before_action :set_user, only: [:update, :show]
 
+   def index
+      @hands = Hand.all
+      render json: @hands
+   end
+   
    def show
    end
 
