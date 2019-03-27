@@ -12,7 +12,8 @@ class Api::V1::UsersController < ApplicationController
    end
 
    def update
-     @user.update(user_params)
+      bet_amount = user_params["bet_amount"]
+      @user.update(balance: @user.balance - bet_amount)
      if @user.save
         render json: @user, status: :accepted
       else
@@ -24,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
    private
 
      def user_params
-       params.permit(:username)
+       params.permit(:id, :balance, :bet_amount)
      end
 
      def set_user
