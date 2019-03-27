@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
    before_action :set_user, only: [:update, :show]
 
    def show
-      render json: @user 
+      render json: @user
    end
 
    def create
