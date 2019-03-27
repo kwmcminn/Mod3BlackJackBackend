@@ -25,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
    private
 
      def user_params
-       params.permit(:id, :balance, :bet_amount)
+       params.permit(:username, :id, :balance, :bet_amount)
      end
 
      def set_user
