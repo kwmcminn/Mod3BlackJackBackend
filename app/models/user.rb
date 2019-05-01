@@ -3,7 +3,7 @@ class User < ApplicationRecord
    after_initialize :init
 
    def init
-      self.balance ||= 1000
+      self.balance ||= 100
       self.save
    end
 end
